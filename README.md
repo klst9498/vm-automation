@@ -27,5 +27,10 @@ ansible-galaxy install gantsign.oh-my-zsh
 nansible-playbook playbook.yml -i hosts -e action=install
 
 # TODOS
-fzf does not work
-install lg
++ fzf does not work
++ install lg
+```
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install lazygit
+```
