@@ -26,3 +26,6 @@ sudo ansible-pull -o -C ${checkout} -d ${directory} -i ${directory}/inventory -U
 ansible-galaxy install gantsign.oh-my-zsh
 nansible-playbook playbook.yml -i hosts -e action=install
 
+# TODOS
+fzf does not work
+install lg
