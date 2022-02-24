@@ -1,0 +1,49 @@
+---
+# Install additional utilities and extensions for i3.
+
+- name: Ensure additional apt repositories
+  apt_repository: repo='{{item}}' state=present update_cache=true
+  with_items:
+    - ppa:aacebedo/fasd
+    - ppa:nilarimogard/webupd8
+
+- name: Ensure packages
+  apt: pkg={{item}} update_cache=true force=yes state=present
+  with_items:
+    - aptitude
+    - wget
+    - curl
+    - git
+
+- name: Ensure required Python libraries
+  pip: name={{item}} state=present
+  with_items:
+    - pathlib
+    - psutil
+    - thefuck
+    - i3-py
+    - quickswitch-i3
+    - py3status
+    - cheat
+
+- name: Ensure i3status config directory
+  file: path=/home/{{remote_user}}/.config/i3status state=directory
+
+- name: Ensure i3status config
+  copy: src={{item}} dest=/home/{{remote_user}}/.config/i3status/ owner={{remote_user}} group={{remote_user}} mode='u=rw'
+  with_fileglob:
+   - i3status/*
+
+- name: Set permissions for i3status config directory
+  file: path=/home/{{remote_user}}/.config/i3status recurse='yes' owner={{remote_user}} group={{remote_user}} mode='u=rwX'
+
+- name: Ensure dunst config directory
+  file: path=/home/{{remote_user}}/.config/dunst state=directory
+
+- name: Ensure dunst config
+  copy: src={{item}} dest=/home/{{remote_user}}/.config/dunst/ owner={{remote_user}} group={{remote_user}} mode='u=rw'
+  with_fileglob:
+   - dunst/*
+
+- name: Set permissions for dunst config directory
+  file: path=/home/{{remote_user}}/.config/dunst recurse='yes' owner={{remote_user}} group={{remote_user}} mode='u=rwX'

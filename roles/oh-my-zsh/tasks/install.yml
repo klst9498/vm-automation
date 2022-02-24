@@ -1,0 +1,25 @@
+---
+# Install i3-wm
+- name: Git checkout zsh-autosuggestions
+  git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions'
+    dest: /home/semulab/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+- name: Git checkout zsh-syntax-highlighting
+  git:
+    repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
+    dest: /home/semulab/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+- name: Git checkout fzf
+  git:
+    repo: 'https://github.com/junegunn/fzf.git'
+    dest: /home/semulab/.fzf
+
+
+# - name: Git checkout autojump
+#   git:
+#     repo: 'https://github.com/wting/autojump.git'
+#     dest: /tmp/autojump
+
+# - name: Instal AutoJump
+#   command: /tmp/autojump/install.py

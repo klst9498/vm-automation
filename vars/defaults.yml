@@ -1,0 +1,30 @@
+
+remote_user: 
+ansible_sudo_pass: 
+
+users:
+  - username: semulab
+
+# Default theme
+oh_my_zsh_theme: cloud
+
+# Default plugins
+oh_my_zsh_plugins:
+  - git
+  #- autojump
+  - battery
+  - colorize
+  - docker
+  - emacs
+  - git-flow
+  - git-prompt
+  - git
+  - kubectl
+  - last-working-dir
+  - terraform
+  - thefuck
+  - helm
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - fzf
+  - jira
