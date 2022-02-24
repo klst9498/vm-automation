@@ -33,4 +33,5 @@ nansible-playbook playbook.yml -i hosts -e action=install
 sudo add-apt-repository ppa:lazygit-team/release
 sudo apt-get update
 sudo apt-get install lazygit
+install vim
 ```
